@@ -79,7 +79,7 @@
     .hero p { color: var(--muted); margin: 0; }
 
     .section-title { text-align: center; margin: 0.5rem 0 1.5rem; font-size: 1.8rem; }
-    .section-title-left { text-align: left; margin: 0.5rem 0 1rem; font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .section-title-left { text-align: left; margin: 0.5rem 0 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
 
     .content-container {
       max-width: 1000px;
@@ -108,7 +108,7 @@
     .projects-list {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 1.25rem; /* Ajustado para 1.25rem como o content-container */
     }
     .projects-list h3 {
       color: var(--primary);
@@ -222,6 +222,95 @@
 
     body.dark footer { background: #0b1526; border-top: 1px solid var(--border-dark); }
     body.dark footer a { color: var(--primary-dark); text-shadow: 0 0 1px rgba(0, 217, 255, 0.2); }
+    
+    /* ======================================================= */
+    /* REGRAS DE RESPONSIVIDADE (OTIMIZAÇÃO MOBILE) */
+    /* ======================================================= */
+    
+    @media (max-width: 768px) {
+        /* 1. Ajuste do Header/Navegação: Transforma de linha para coluna */
+        
+        header {
+            flex-direction: column; /* Coloca os filhos em coluna */
+            flex-wrap: wrap;
+            padding: 0.8rem 1rem;
+            height: auto; /* Permite que o header cresça */
+            align-items: flex-start; /* Alinha tudo à esquerda */
+        }
+        
+        .brand {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .actions {
+            flex-direction: column; /* Links em coluna */
+            gap: 0.5rem;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        nav {
+            width: 100%;
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
+            order: 2; /* Coloca a navegação abaixo do botão de tema */
+        }
+        
+        nav a {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0.2rem 0.1rem;
+            padding: 0.4rem 0;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            order: 1; /* Coloca o botão acima da navegação */
+        }
+
+        /* 2. Ajustes de Leitura */
+        .hero {
+            padding-top: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        /* Redução de Padding e Fonte em Telas Muito Pequenas */
+        .content-container, .hero, .projects-grid, .projects-list {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        
+        /* Força a grade de projetos para 1 coluna */
+        .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .hero h1 {
+            font-size: 1.6rem;
+        }
+        
+        .card {
+            padding: 0.8rem;
+        }
+        
+        /* Ajuste do Título da Lista de Projetos para caber melhor */
+        .projects-list span {
+            min-width: 70px;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* ======================================================= */
+    /* FIM DAS REGRAS DE RESPONSIVIDADE */
+    /* ======================================================= */
   </style>
 </head>
 <body>
@@ -387,176 +476,4 @@
         <li><a href="https://github.com/Santosdevbjj/sistemaDeHospedagem" target="_blank">Sistema de Hospedagem</a></li>
         <li><a href="https://github.com/Santosdevbjj/sistemaEstacionamento" target="_blank">Sistema de Estacionamento</a></li>
         <li><a href="https://github.com/Santosdevbjj/sistemaPOOcelular" target="_blank">POO - Sistema Celular</a></li>
-        <li><a href="https://github.com/Santosdevbjj/projetoSQLServer" target="_blank">Projeto SQL Server</a></li>
-        <li><a href="https://github.com/Santosdevbjj/reduzirCustosAWS" target="_blank">Redução de Custos AWS</a></li>
-      </ul>
-
-      <h3>Java</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/NTTDataDesafio" target="_blank">Desafio NTT Data</a></li>
-        <li><a href="https://github.com/Santosdevbjj/javaNaPraticaPOO" target="_blank">POO na Prática</a></li>
-        <li><a href="https://github.com/Santosdevbjj/boardTarefasJava" target="_blank">Board de Tarefas</a></li>
-        <li><a href="https://github.com/Santosdevbjj/deployAppTonnie" target="_blank">Deploy App Tonnie</a></li>
-        <li><a href="https://github.com/Santosdevbjj/PadraoProjetoJava" target="_blank">Padrões de Projeto</a></li>
-        <li><a href="https://github.com/Santosdevbjj/SudokuJogoJava" target="_blank">Jogo Sudoku</a></li>
-        <li><a href="https://github.com/Santosdevbjj/testUnitValidarApiRest" target="_blank">Testes Unitários API REST</a></li>
-        <li><a href="https://github.com/Santosdevbjj/transacaoFinanceira" target="_blank">Transação Financeira</a></li>
-        <li><a href="https://github.com/Santosdevbjj/jogoDaForca" target="_blank">Jogo da Forca</a></li>
-        <li><a href="https://github.com/Santosdevbjj/pooDesafioJava" target="_blank">Desafio POO</a></li>
-        <li><a href="https://github.com/Santosdevbjj/criarEbook" target="_blank">Criar E-book</a></li>
-      </ul>
-
-      <h3>Python</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/apiWorkoutPython" target="_blank">API Workout</a></li>
-        <li><a href="https://github.com/Santosdevbjj/apiBancaria" target="_blank">API Bancária</a></li>
-        <li><a href="https://github.com/Santosdevbjj/genAIpipeETLPython" target="_blank">Pipeline ETL com IA</a></li>
-        <li><a href="https://github.com/Santosdevbjj/utilizaFerramentasGitHub" target="_blank">Ferramentas GitHub</a></li>
-        <li><a href="https://github.com/Santosdevbjj/generosLiterarios" target="_blank">Gêneros Literários</a></li>
-        <li><a href="https://github.com/Santosdevbjj/pacoteProcessImagem" target="_blank">Pacote Processamento de Imagem</a></li>
-        <li><a href="https://github.com/Santosdevbjj/primeiroCopiloto" target="_blank">Primeiro Copiloto</a></li>
-        <li><a href="https://github.com/Santosdevbjj/modelaSistemaBancPOO" target="_blank">Sistema Bancário POO</a></li>
-        <li><a href="https://github.com/Santosdevbjj/sistemaBancario" target="_blank">Sistema Bancário</a></li>
-        <li><a href="https://github.com/Santosdevbjj/copilotoFluxoConversa" target="_blank">Copiloto - Fluxo de Conversa</a></li>
-        <li><a href="https://github.com/Santosdevbjj/otimizaSistemaBancario" target="_blank">Otimização Sistema Bancário</a></li>
-      </ul>
-
-      <h3>Machine Learning & IA</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/sistemRecomendaImag" target="_blank">Sistema de Recomendação de Imagens</a></li>
-        <li><a href="https://github.com/Santosdevbjj/Transfer-Learning-Project" target="_blank">Transfer Learning</a></li>
-        <li><a href="https://github.com/Santosdevbjj/reconheceFaceZero" target="_blank">Reconhecimento Facial Zero-Shot</a></li>
-        <li><a href="https://github.com/Santosdevbjj/calculoMetricasML" target="_blank">Cálculo de Métricas ML</a></li>
-        <li><a href="https://github.com/Santosdevbjj/treinaRedeYolo" target="_blank">Treinamento Rede YOLO</a></li>
-        <li><a href="https://github.com/Santosdevbjj/agenteDetector" target="_blank">Agente Detector</a></li>
-        <li><a href="https://github.com/Santosdevbjj/reduzImagensRedeNeural" target="_blank">Redução de Imagens - Rede Neural</a></li>
-        <li><a href="https://github.com/Santosdevbjj/testUnitLcAzGpt" target="_blank">Testes Unitários Azure GPT</a></li>
-        <li><a href="https://github.com/Santosdevbjj/assistVirtualPLN" target="_blank">Assistente Virtual PLN</a></li>
-        <li><a href="https://github.com/Santosdevbjj/redesNeuraisTranfer" target="_blank">Redes Neurais Transfer Learning</a></li>
-        <li><a href="https://github.com/Santosdevbjj/transfer-learning-cats-vs-dogs" target="_blank">Transfer Learning: Cats vs Dogs</a></li>
-        <li><a href="https://github.com/Santosdevbjj/analiseSentimet_LanStuAz.md" target="_blank">Análise de Sentimentos Azure</a></li>
-        <li><a href="https://github.com/Santosdevbjj/Sales_Insights_AI_DIO" target="_blank">Sales Insights AI</a></li>
-        <li><a href="https://github.com/Santosdevbjj/azureCognitive_dio.md" target="_blank">Azure Cognitive Services</a></li>
-        <li><a href="https://github.com/Santosdevbjj/podCastIA" target="_blank">Podcast com IA</a></li>
-        <li><a href="https://github.com/Santosdevbjj/dashboardVendasXbox" target="_blank">Dashboard Vendas Xbox</a></li>
-        <li><a href="https://github.com/Santosdevbjj/IntegraChatgptNodReac" target="_blank">Integração ChatGPT + Node + React</a></li>
-        <li><a href="https://github.com/Santosdevbjj/recursoIAgeneratOpenAi_Dio" target="_blank">OpenAI Generativa</a></li>
-        <li><a href="https://github.com/Santosdevbjj/artigoTecnico" target="_blank">Artigo Técnico com IA</a></li>
-        <li><a href="https://github.com/Santosdevbjj/validar_BandeiraCartaoCredito" target="_blank">Validação Bandeira Cartão</a></li>
-        <li><a href="https://github.com/Santosdevbjj/nattyOrNot" target="_blank">Natty or Not</a></li>
-      </ul>
-
-      <h3>Azure Cloud</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/versaCodigoNotebookAzure" target="_blank">Versionamento Código Notebook</a></li>
-        <li><a href="https://github.com/Santosdevbjj/AzureDevOpsVersiBackup" target="_blank">Azure DevOps - Versionamento</a></li>
-        <li><a href="https://github.com/Santosdevbjj/processoRedundanciaArqAzure" target="_blank">Redundância Arquitetura Azure</a></li>
-        <li><a href="https://github.com/Santosdevbjj/monitoraCustosDataFactory" target="_blank">Monitoramento Custos Data Factory</a></li>
-      </ul>
-
-      <h3>Power BI & Análise de Dados</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/relatoVendasLucros" target="_blank">Relatório Vendas e Lucros</a></li>
-        <li><a href="https://github.com/Santosdevbjj/dashboardGerencial" target="_blank">Dashboard Gerencial</a></li>
-        <li><a href="https://github.com/Santosdevbjj/relatoDinamicoPowerBi" target="_blank">Relatório Dinâmico Power BI</a></li>
-        <li><a href="https://github.com/Santosdevbjj/dashboardStarShema" target="_blank">Dashboard Star Schema</a></li>
-        <li><a href="https://github.com/Santosdevbjj/dashboardCorporativo" target="_blank">Dashboard Corporativo</a></li>
-        <li><a href="https://github.com/Santosdevbjj/dashboardEcommerceDax" target="_blank">Dashboard E-commerce DAX</a></li>
-        <li><a href="https://github.com/Santosdevbjj/relatoDashVendas" target="_blank">Relatório Dashboard Vendas</a></li>
-        <li><a href="https://github.com/Santosdevbjj/relatoGereVendas" target="_blank">Relatório Gerencial Vendas</a></li>
-      </ul>
-
-      <h3>Ciência de Dados</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/awsFarmaciasReduzCustos" target="_blank">Redução Custos Farmácias AWS</a></li>
-        <li><a href="https://github.com/Santosdevbjj/vendasXboxExcelDash" target="_blank">Vendas Xbox - Dashboard Excel</a></li>
-        <li><a href="https://github.com/Santosdevbjj/genAIpipeETLPython" target="_blank">Pipeline ETL com IA Generativa</a></li>
-        <li><a href="https://github.com/Santosdevbjj/prevencaoFraudesPix" target="_blank">Prevenção de Fraudes PIX</a></li>
-      </ul>
-
-      <h3>Neo4J - Análise de Dados com Grafos</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/modelaDadosEmGrafos" target="_blank">Modelagem de Dados em Grafos</a></li>
-      </ul>
-
-      <h3>Banco de Dados</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/firstLogicoBD" target="_blank">Primeiro Lógico BD</a></li>
-        <li><a href="https://github.com/Santosdevbjj/projetoLogicoDoZeroBD" target="_blank">Projeto Lógico do Zero</a></li>
-        <li><a href="https://github.com/Santosdevbjj/BdOSoficinaMecanica" target="_blank">BD Oficina Mecânica</a></li>
-        <li><a href="https://github.com/Santosdevbjj/bancoDadosEcommerceDio" target="_blank">BD E-commerce</a></li>
-      </ul>
-
-      <h3>Amazon AWS</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/gerenciaInstanciaEC2" target="_blank">Gerenciamento Instância EC2</a></li>
-      </ul>
-
-      <h3>Cibersegurança</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/DesafioDioPhishing" target="_blank">Desafio Phishing</a></li>
-        <li><a href="https://github.com/Santosdevbjj/desafioDioRansomware" target="_blank">Desafio Ransomware</a></li>
-      </ul>
-
-      <h3>Lógica de Programação</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/nivelDeHeroi" target="_blank">Nível de Herói</a></li>
-        <li><a href="https://github.com/Santosdevbjj/partidasRankeadas" target="_blank">Partidas Rankeadas</a></li>
-        <li><a href="https://github.com/Santosdevbjj/jogoClassesObjeto" target="_blank">Jogo - Classes e Objetos</a></li>
-      </ul>
-
-      <h3>HTML/Frontend</h3>
-      <ul>
-        <li><a href="https://github.com/Santosdevbjj/criaPageWeb" target="_blank">Criação de Página Web</a></li>
-      </ul>
-      
-    </div>
-  </section>
-  
-  <section id="artigos" class="content-container">
-    <h2 class="section-title-left">📚 Repositório de Artigos Técnicos</h2>
-    <p>Acesse o <a href="https://github.com/Santosdevbjj/myArticles" target="_blank">repositório completo de artigos</a> com conteúdos sobre tecnologia, boas práticas e análises técnicas.</p>
-  </section>
-
-  <section id="contato" class="hero">
-    <h2 class="section-title">📬 Contato</h2>
-    <div class="contact-badges">
-        <a href="https://santosdevbjj.github.io/portfolio/" target="_blank">
-            <img src="https://img.shields.io/badge/Portfólio-Sérgio_Santos-111827?style=for-the-badge&logo=githubpages&logoColor=00eaff" alt="Portfólio Sérgio Santos">
-        </a>
-        <a href="https://linkedin.com/in/santossergioluiz" target="_blank">
-            <img src="https://img.shields.io/badge/LinkedIn-Sérgio_Santos-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Sérgio Santos">
-        </a>
-        <a href="mailto:santossergiorealbjj@outlook.com">
-            <img src="https://img.shields.io/badge/Email-santossergiorealbjj@outlook.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-        </a>
-    </div>
-  </section>
-
-  <footer>
-    Desenvolvido por Sergio Santos
-  </footer>
-
-  <script>
-    // Inicializa tema pelo localStorage
-    (function initTheme() {
-      const saved = localStorage.getItem('theme') || 'light';
-      const isDark = saved === 'dark';
-      document.body.classList.toggle('dark', isDark);
-      updateButton(isDark);
-    })();
-
-    function updateButton(isDark) {
-      const btn = document.getElementById('themeBtn');
-      btn.textContent = isDark ? 'Modo claro' : 'Modo escuro';
-      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    }
-
-    document.getElementById('themeBtn').addEventListener('click', function () {
-      const isDark = document.body.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateButton(isDark);
-    });
-  </script>
-</body>
-</html>
+        <li><a href="ht
